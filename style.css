@@ -4,95 +4,141 @@
 
 body {
   margin: 0;
-  font-family: 'Inter', sans-serif;
+  font-family: Inter, sans-serif;
   background: radial-gradient(circle at top, #123c33, #0E2A24);
   color: #F7F7FB;
+  overflow-x: hidden;
+}
+
+/* 🎅 Santa Background */
+#santa-bg {
+  position: fixed;
+  top: 40px;    
+  bottom: 30px;
+  right: -0px;      /* شروع از بیرون صفحه سمت راست */
+  width: 320px;      /* بزرگ‌تر شد */
+  opacity: 0.25;
+  filter: invert(1);
+  pointer-events: none;
+  z-index: 0;
+  transition: transform 0.1s linear;
 }
 
 /* HERO */
 .hero {
   min-height: 100vh;
-  text-align: center;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 18px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px;
+  gap: 60px;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-left {
+  max-width: 420px;
 }
 
 .logo {
-  width: 90px;
-  margin: 0 auto;
+  width: 80px;
   filter: drop-shadow(0 0 20px rgba(242,107,58,.6));
 }
 
 h1 {
   font-family: 'Playfair Display', serif;
-  font-size: 48px;
 }
 
+/* INPUT */
 .hero input {
-  width: 260px;
-  margin: 0 auto;
+  margin-top: 20px;
   padding: 14px 18px;
+  width: 100%;
   border-radius: 14px;
   border: none;
-  background: rgba(255,255,255,0.18);
+  background: rgba(255,255,255,.18);
   color: white;
   font-size: 16px;
-  backdrop-filter: blur(12px);
   outline: none;
 }
 
-/* CARD SELECTOR */
+/* BUTTONS */
+.hero-left button {
+  margin-top: 14px;
+  width: 100%;
+  padding: 14px 0;
+  border-radius: 14px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+#downloadBtn {
+  background: #F26B3A;
+  color: #fff;
+}
+
+#tweetBtn {
+  background: #1DA1F2;
+  color: #fff;
+}
+
+.hero-left button:disabled {
+  opacity: .4;
+  cursor: not-allowed;
+}
+
+.hint {
+  margin-top: 14px;
+  font-size: 14px;
+}
+
+/* PREVIEW */
+.hero-right canvas {
+  width: 380px;
+  border-radius: 18px;
+}
+
+/* CARD GRID */
 .selector {
-  padding: 60px 40px;
+  padding: 60px;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 26px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  position: relative;
+  z-index: 2;
 }
 
 .selector img {
   width: 100%;
-  border-radius: 18px;
+  border-radius: 16px;
   cursor: pointer;
-  transition: .3s;
   border: 2px solid transparent;
-}
-
-.selector img:hover {
-  transform: scale(1.03);
 }
 
 .selector img.active {
   border-color: #F26B3A;
-  box-shadow: 0 0 30px rgba(242,107,58,.5);
 }
 
-/* PREVIEW */
-.preview {
-  padding: 80px 20px;
-  text-align: center;
+/* ❄️ SNOW */
+#snow {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
 }
 
-.preview canvas {
-  max-width: 100%;
-  border-radius: 18px;
-  margin-top: 30px;
-}
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+  }
 
-.preview button {
-  margin-top: 30px;
-  padding: 14px 26px;
-  border-radius: 14px;
-  border: none;
-  background: #F26B3A;
-  color: #0B0B0B;
-  font-weight: 600;
-  cursor: pointer;
-  transition: .3s;
-}
+  #santa-bg {
+    display: none;
+  }
 
-.preview button:disabled {
-  opacity: .4;
-  cursor: not-allowed;
+  .selector {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
