@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>Altius Christmas Card</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
@@ -9,21 +9,30 @@
 </head>
 <body>
 
-<section class="hero">
-  <img src="assets/logo-orange.png" class="logo">
-  <h1>Altius Christmas Card</h1>
-  <p>Choose a card and generate your personalized Christmas card</p>
+<!-- 🎅 Santa Background -->
+<img src="assets/santa.svg" id="santa-bg" alt="santa">
 
-  <input id="twitter" placeholder="@YourTwitterID">
+<section class="hero">
+  <div class="hero-left">
+    <img src="assets/logo-orange.png" class="logo">
+    <h1>Altius Christmas Card</h1>
+
+    <input id="twitter" placeholder="@YourTwitterID">
+
+    <button id="downloadBtn" disabled>Download Card</button>
+    <button id="tweetBtn" disabled>Share on Twitter</button>
+
+    <p class="hint">👇 Choose your favorite design from the cards below</p>
+  </div>
+
+  <div class="hero-right">
+    <canvas id="previewCanvas" width="760" height="506"></canvas>
+  </div>
 </section>
 
 <section class="selector" id="selector"></section>
 
-<section class="preview">
-  <h2>Your Card</h2>
-  <canvas id="previewCanvas"></canvas>
-  <button id="downloadBtn" disabled>Download Card</button>
-</section>
+<canvas id="snow"></canvas>
 
 <script src="script.js"></script>
 </body>
