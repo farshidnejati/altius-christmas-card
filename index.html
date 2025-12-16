@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Altius Christmas Card</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<section class="hero">
+  <img src="assets/logo-orange.png" class="logo">
+  <h1>Altius Christmas Card</h1>
+  <p>Choose a card and generate your personalized Christmas card</p>
+
+  <input id="twitter" placeholder="@YourTwitterID">
+</section>
+
+<section class="selector" id="selector"></section>
+
+<section class="preview">
+  <h2>Your Card</h2>
+  <canvas id="previewCanvas"></canvas>
+  <button id="downloadBtn" disabled>Download Card</button>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
