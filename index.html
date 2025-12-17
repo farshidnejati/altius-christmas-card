@@ -9,25 +9,50 @@
 </head>
 <body>
 
-<!-- 🎅 Santa Background -->
-<img src="assets/santa.svg" id="santa-bg" alt="santa">
+<img src="assets/santa.svg" id="santa-bg" alt="Santa">
 
 <section class="hero">
+
   <div class="hero-left">
-    <img src="assets/logo-orange.png" class="logo">
+
+    <!-- Desktop Logo -->
+    <img src="assets/logo-orange.png" class="logo" alt="Logo">
+
+    <!-- Mobile Preview -->
+    <div class="mobile-preview">
+      <img src="assets/logo-orange.png" class="mobile-logo" alt="Logo">
+      <canvas id="previewCanvasMobile" width="760" height="506"></canvas>
+    </div>
+
     <h1>Altius Christmas Card</h1>
 
-    <input id="twitter" placeholder="@YourTwitterID">
+    <small class="input-hint">Enter username without @</small>
+    <input id="twitter" maxlength="20" placeholder="your_username">
 
     <button id="downloadBtn" disabled>Download Card</button>
     <button id="tweetBtn" disabled>Share on Twitter</button>
 
-    <p class="hint">👇 Choose your favorite design from the cards below</p>
+    <div class="creator">
+      <span>Creator:</span>
+
+      <a href="https://twitter.com/farshid_n75" target="_blank" class="social-link">
+        <img src="assets/X.png" alt="Twitter">
+        <span>@farshid_n75</span>
+      </a>
+
+      <div class="social-link no-link">
+        <img src="assets/Discord.png" alt="Discord">
+        <span>@farshid75</span>
+      </div>
+    </div>
+
+    <p class="hint">Select your favorite design below 👇</p>
   </div>
 
   <div class="hero-right">
-    <canvas id="previewCanvas" width="760" height="506"></canvas>
+    <canvas id="previewCanvasDesktop" width="760" height="506"></canvas>
   </div>
+
 </section>
 
 <section class="selector" id="selector"></section>
